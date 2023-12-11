@@ -5,34 +5,34 @@ import java.util.List;
 import java.util.function.Predicate;
 
 class Employee {
-	int eid;
 	String ename;
 	long salary;
+	int experience;
 
-	public Employee(int eid, String ename, long salary) {
-		this.eid = eid;
+	public Employee(String ename, long salary, int experience) {
+
 		this.ename = ename;
 		this.salary = salary;
+		this.experience = experience;
 	}
 
 }
 
 public class PredicateTest2 {
 	public static void main(String[] args) {
-	   
-	List<Employee> employees=new ArrayList<>();
-	employees.add(new Employee(101,"smith",300000));
-	employees.add(new Employee(102,"alex",400000));
-	employees.add(new Employee(103,"john",500000));
-	Predicate<Employee> p=e->(e.salary>300000);
-	
-	for(Employee employee:employees) {
-		if(p.test(employee)) {
-			System.out.println(employee.ename);
+
+		List<Employee> employees = new ArrayList<>();
+		employees.add(new Employee( "smith", 300000,2));
+		employees.add(new Employee( "alex", 400000,3));
+		employees.add(new Employee( "john", 500000,4));
+		Predicate<Employee> p = e -> (e.salary > 300000&&e.experience<5);
+
+		for (Employee employee : employees) {
+			if (p.test(employee)) {
+				System.out.println(employee.ename);
+			}
+
 		}
-		
+
 	}
-	
-	
-}
 }
