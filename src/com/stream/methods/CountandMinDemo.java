@@ -2,6 +2,7 @@ package com.stream.methods;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class CountandMinDemo {
 public static void main(String[] args) {
@@ -9,5 +10,11 @@ public static void main(String[] args) {
 	//find the number of even numbers 
 	long count=numbers.stream().filter(number->number%2==0).count();
 	System.out.println(count);
+	
+	//min 
+	Optional<Integer> minVal=numbers.stream().min((val1,val2)->{
+		return val1.compareTo(val2);
+		});
+	System.out.println(minVal.get());
 }
 }
