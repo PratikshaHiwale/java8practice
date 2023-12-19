@@ -16,5 +16,12 @@ public static void main(String[] args) {
 		return val1.compareTo(val2);
 		});
 	System.out.println(minVal.get());
+	
+	//max
+	Optional<Integer>maxVal=numbers.stream().max((val1,val2)->{
+		return val1.compareTo(val2);
+	});
+	System.out.println(maxVal.get());
+	
 }
 }
