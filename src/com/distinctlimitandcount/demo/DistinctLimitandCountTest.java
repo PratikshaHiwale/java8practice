@@ -1,4 +1,4 @@
-package DistinctLimitandCountDemo;
+package com.distinctlimitandcount.demo;
 
 import java.util.Arrays;
 import java.util.List;
